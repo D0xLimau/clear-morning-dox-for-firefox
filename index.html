@@ -526,7 +526,9 @@
                     id('search').addEventListener('submit', (event) => {
                         event.preventDefault()
 
-                        window.location.assign(composeLink(searchBox.value))
+                        <!-- window.location.assign(composeLink(searchBox.value)) -->
+                        //force it open new tab when search
+                        window.open(composeLink(searchBox.value), '_blank')
                     })
 
                     const suggestionTemplate = id('t-suggest')
@@ -552,6 +554,7 @@
                             const suggestion = template.children[0]
                             suggestion.textContent = suggest.label
                             suggestion.href = suggest.href
+                            suggestion.target = "_blank"
 
                             suggestion.addEventListener('keydown', (event) => {
                                 const current = event.currentTarget
@@ -1146,7 +1149,7 @@
                 <section id="suggestion" style="display: none"></section>
 
                 <section id="pin">
-                    <a href="https://facebook.com">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 512 512"
@@ -1157,7 +1160,7 @@
                             />
                         </svg>
                     </a>
-                    <a href="https://x.com">
+                    <a href="https://x.com" target="_blank" rel="noopener noreferrer">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 512 512"
@@ -1169,7 +1172,7 @@
                             />
                         </svg>
                     </a>
-                    <a href="https://github.com">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 496 512"
