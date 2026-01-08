@@ -527,8 +527,6 @@
                         event.preventDefault()
 
                         window.location.assign(composeLink(searchBox.value))
-                        //force it open new tab when search
-                        //window.open(composeLink(searchBox.value), '_blank')
                     })
 
                     const suggestionTemplate = id('t-suggest')
@@ -554,7 +552,6 @@
                             const suggestion = template.children[0]
                             suggestion.textContent = suggest.label
                             suggestion.href = suggest.href
-                            //suggestion.target = "_blank"
 
                             suggestion.addEventListener('keydown', (event) => {
                                 const current = event.currentTarget
